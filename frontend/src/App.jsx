@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import Navbar from './components/Navbar';
 import Login from './pages/Login';
@@ -10,17 +10,21 @@ const ProtectedRoute = ({ children }) => {
   return user ? children : <Navigate to="/login" />;
 };
 
-const AppRoutes = () => (
-  <>
-    <Navbar />
-    <Routes>
+const AppRoutes = () => {
+  const { pathname } = useLocation();
+  const noNavbarRoutes = ['/login', '/signup'];
+  return (
+    <>
+      {!noNavbarRoutes.includes(pathname) && <Navbar />}
+      <Routes>
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/premium" element={<ProtectedRoute><Premium /></ProtectedRoute>} />
-      <Route path="*" element={<Navigate to="/login" />} />
-    </Routes>
-  </>
-);
+        <Route path="*" element={<Navigate to="/login" />} />
+      </Routes>
+    </>
+  );
+};
 
 export default function App() {
   return (
