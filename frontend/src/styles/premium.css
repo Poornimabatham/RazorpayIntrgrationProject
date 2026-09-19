@@ -1,0 +1,123 @@
+.premium-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f0f0f 0%, #1a1a2e 100%);
+  padding: 60px 20px;
+}
+
+.premium-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.premium-header h1 {
+  font-size: 36px;
+  font-weight: 700;
+  background: linear-gradient(90deg, #e91e8c, #7c3aed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.premium-header p {
+  color: #888;
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.plans-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.or-divider {
+  font-size: 18px;
+  color: #555;
+  font-weight: 600;
+}
+
+.plan-card {
+  background: #1e1e2e;
+  border: 1px solid #2e2e4e;
+  border-radius: 20px;
+  padding: 36px 32px;
+  width: 300px;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.plan-card:hover {
+  transform: translateY(-6px);
+  border-color: #e91e8c;
+}
+
+.plan-card.gold:hover { border-color: #f59e0b; }
+
+.plan-name {
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.plan-price {
+  font-size: 32px;
+  font-weight: 800;
+  background: linear-gradient(90deg, #e91e8c, #7c3aed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 20px;
+}
+
+.plan-card.gold .plan-price {
+  background: linear-gradient(90deg, #f59e0b, #ef4444);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.plan-features {
+  list-style: none;
+  margin-bottom: 28px;
+}
+
+.plan-features li {
+  font-size: 14px;
+  color: #ccc;
+  padding: 6px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.plan-features li::before {
+  content: '✓';
+  color: #e91e8c;
+  font-weight: 700;
+}
+
+.plan-card.gold .plan-features li::before { color: #f59e0b; }
+
+.plan-btn {
+  width: 100%;
+  padding: 13px;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.plan-btn.silver {
+  background: linear-gradient(90deg, #e91e8c, #7c3aed);
+  color: #fff;
+}
+
+.plan-btn.gold {
+  background: linear-gradient(90deg, #f59e0b, #ef4444);
+  color: #fff;
+}
+
+.plan-btn:hover { opacity: 0.88; }
