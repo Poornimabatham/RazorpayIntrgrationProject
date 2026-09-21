@@ -8,6 +8,16 @@
   text-align: center;
   margin-bottom: 50px;
 }
+.premium-badge {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 8px 20px;
+  background: linear-gradient(90deg, #e91e8c, #7c3aed);
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+}
 
 .premium-header h1 {
   font-size: 36px;
