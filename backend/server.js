@@ -8,6 +8,9 @@ const paymentRoutes = require('./routes/paymentRoutes');
 
 const app = express();
 app.use(cors());
+
+// Raw body needed for webhook signature verification
+app.use('/api/payment/Paymentwebhook', express.raw({ type: 'application/json' }));
 app.use(express.json());
 
 connectDB();
